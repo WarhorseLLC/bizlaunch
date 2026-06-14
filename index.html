@@ -396,7 +396,7 @@ const GLOSSARY = [
       {
         term: 'Estimated Quarterly Taxes', full: 'Form 1040-ES',
         tag: 'fed',
-        body: 'As a business owner you don\'t have an employer withholding taxes from a paycheck, so you pay the IRS four times a year. Due dates are typically April 15, June 15, September 15, and January 15. Missing these triggers a penalty even if you pay in full at tax time.',
+        body: '2026 due dates: April 15, June 15, September 15, and January 15, 2027. As a business owner with no employer withholding, you pay the IRS quarterly. Missing these triggers an underpayment penalty even if you pay in full at tax time.',
         link: 'https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes',
         linkLabel: 'IRS Estimated Tax info'
       },
@@ -659,7 +659,43 @@ Priority values: critical, high, or medium only.
 Federal items (include all applicable, max 6): EIN from IRS, BOI/FinCEN report status note (IMPORTANT: As of March 2025 FinCEN interim final rule, US-formed LLCs and corporations are EXEMPT from BOI filing — include this as a medium priority informational item noting the exemption is in effect but the law could be reinstated so users should monitor fincen.gov), self-employment tax setup, S-corp election if applicable, federal industry license if required.
 State items (include all applicable, max 6): SOS filing confirmation, state tax ID, sales tax permit, state business license, registered agent, annual report deadline, industry state license if required.
 City items (include all applicable, max 5): city/municipal business license, zoning permit or home occupation permit, local signage permit if applicable, city sales tax registration if city has its own sales tax, county business license if required. If no city was provided, return an empty city array. Use the actual city name in descriptions. Link to the city or county official website where possible.
-Use real .gov or official city/county URLs. You specialize in these four states only: Arizona, Florida, Tennessee, and Texas. Be highly accurate and specific — include correct fees, deadlines, and official agency names for each state. For Arizona: AZ Corporation Commission, ADOR. For Florida: FL Division of Corporations (sunbiz.org), FDOR. For Tennessee: TN Secretary of State, TDOR. For Texas: TX Secretary of State, Texas Comptroller.`;
+Use real .gov or official city/county URLs. You specialize in these four states only: Arizona, Florida, Tennessee, and Texas. Be highly accurate and specific — include correct fees, deadlines, and official agency names for each state. CRITICAL STATE-SPECIFIC FACTS (use these exact details):
+
+ARIZONA LLC:
+- Articles of Organization: $50 regular, $85 expedited, filed with AZ Corporation Commission (azcc.gov)
+- NO annual report required for LLCs (corporations do require one)
+- TPT (Transaction Privilege Tax) license required if selling goods/services: $12/location, renew by January 1 each year at AZTaxes.gov
+- State tax ID: register at AZTaxes.gov using Form JT-1
+- No Arizona franchise tax or state income tax on LLC pass-through income
+- Registered agent (statutory agent) required, must have AZ physical address
+- New portal: Arizona Business Connect (azbusinessconnect.gov)
+
+FLORIDA LLC:
+- Articles of Organization: $125 filing fee, filed with FL Division of Corporations (sunbiz.org)
+- Annual report: $138.75 fee, due May 1 each year, $400 automatic late penalty, filed at sunbiz.org
+- Administrative dissolution if not filed by third Friday in September
+- First annual report due January 1 - May 1 of the YEAR AFTER formation
+- Sales tax permit: register with FL Department of Revenue (floridarevenue.com)
+- Registered agent required with FL physical address
+
+TENNESSEE LLC:
+- Articles of Organization: $300 filing fee (for LLCs with 1-6 members), filed with TN Secretary of State (sos.tn.gov)
+- Annual report: $300 fee (1-6 members), due April 1 each year, filed at TNCaB portal (tncab.tn.gov)
+- 60-day grace period after April 1 before administrative dissolution
+- Franchise & Excise Tax (Form FAE170): required for all TN LLCs, due April 15 each year
+  - Franchise tax: 0.25% of net worth, minimum $100/year
+  - Excise tax: 6.5% of net earnings, $50,000 standard deduction
+- No Tennessee state income tax on wages
+- Sales tax: register with TDOR (tntap.tn.gov)
+
+TEXAS LLC:
+- Certificate of Formation: $300 filing fee, filed with TX Secretary of State (sos.texas.gov)
+- NO Secretary of State annual report for LLCs
+- Public Information Report (PIR, Form 05-102): required annually by May 15, filed with Texas Comptroller (comptroller.texas.gov), even if zero revenue — $50 late penalty
+- Franchise tax: 0.75% of revenue above $2.65M threshold (2026); below threshold still must file PIR
+- Sales tax permit: register with Texas Comptroller (comptroller.texas.gov)
+- Registered agent required with TX physical address
+- No Texas state income tax`;
 
   const userMsg = `State: ${state}\nCity: ${city || '(not specified)'}\nBusiness type: ${bizType}\nIndustry: ${industry || 'General small business'}\n\nGenerate the complete compliance checklist now.`;
 
