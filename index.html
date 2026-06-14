@@ -415,7 +415,7 @@ const GLOSSARY = [
       {
         term: 'BOI Report', full: 'Beneficial Ownership Information Report',
         tag: 'fed',
-        body: 'A federal filing required by the Corporate Transparency Act (2024). Most LLCs and corporations must report who actually owns or controls the business to FinCEN (the Treasury\'s financial crimes unit). New businesses formed in 2024 or later must file within 90 days of formation. Penalty for non-filing: up to $500/day. Free to file at boiefiling.fincen.gov.',
+        body: 'As of March 2025, US-formed LLCs and corporations are EXEMPT from BOI filing under a FinCEN interim final rule. Only foreign-formed companies registered to do business in the US must still file. The Corporate Transparency Act remains law and could be reinstated — monitor fincen.gov for updates.',
         link: 'https://boiefiling.fincen.gov',
         linkLabel: 'File BOI at FinCEN.gov'
       },
@@ -656,7 +656,7 @@ Exact JSON format:
 {"federal":[{"id":"fed1","name":"","priority":"critical","cost":"","timeframe":"","desc":"","link":"","linkLabel":""}],"state":[{"id":"st1","name":"","priority":"critical","cost":"","timeframe":"","desc":"","link":"","linkLabel":""}],"city":[{"id":"cty1","name":"","priority":"critical","cost":"","timeframe":"","desc":"","link":"","linkLabel":""}]}
 
 Priority values: critical, high, or medium only.
-Federal items (include all applicable, max 6): EIN from IRS, BOI/FinCEN beneficial ownership report, self-employment tax setup, S-corp election if applicable, federal industry license if required.
+Federal items (include all applicable, max 6): EIN from IRS, BOI/FinCEN report status note (IMPORTANT: As of March 2025 FinCEN interim final rule, US-formed LLCs and corporations are EXEMPT from BOI filing — include this as a medium priority informational item noting the exemption is in effect but the law could be reinstated so users should monitor fincen.gov), self-employment tax setup, S-corp election if applicable, federal industry license if required.
 State items (include all applicable, max 6): SOS filing confirmation, state tax ID, sales tax permit, state business license, registered agent, annual report deadline, industry state license if required.
 City items (include all applicable, max 5): city/municipal business license, zoning permit or home occupation permit, local signage permit if applicable, city sales tax registration if city has its own sales tax, county business license if required. If no city was provided, return an empty city array. Use the actual city name in descriptions. Link to the city or county official website where possible.
 Use real .gov or official city/county URLs. You specialize in these four states only: Arizona, Florida, Tennessee, and Texas. Be highly accurate and specific — include correct fees, deadlines, and official agency names for each state. For Arizona: AZ Corporation Commission, ADOR. For Florida: FL Division of Corporations (sunbiz.org), FDOR. For Tennessee: TN Secretary of State, TDOR. For Texas: TX Secretary of State, Texas Comptroller.`;
