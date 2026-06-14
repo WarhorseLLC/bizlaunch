@@ -664,7 +664,7 @@ Use real .gov or official city/county URLs. You specialize in these four states 
   const userMsg = `State: ${state}\nCity: ${city || '(not specified)'}\nBusiness type: ${bizType}\nIndustry: ${industry || 'General small business'}\n\nGenerate the complete compliance checklist now.`;
 
   try {
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    const resp = await fetch('/api/checklist', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
