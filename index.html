@@ -8,24 +8,18 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7f4;color:#1a1a1a;min-height:100vh}
-.shell{max-width:720px;margin:0 auto;padding:2rem 1.5rem}
-
-/* Header */
+.shell{max-width:740px;margin:0 auto;padding:2rem 1.5rem}
 .hero{padding-bottom:1.25rem;border-bottom:1px solid #e0ded8;margin-bottom:1.5rem}
 .logo{display:flex;align-items:center;gap:12px;margin-bottom:.6rem}
 .logo-mark{width:40px;height:40px;background:#1a3a5c;border-radius:10px;display:flex;align-items:center;justify-content:center}
 .logo-mark i{color:#fff;font-size:20px}
 .logo-name{font-size:22px;font-weight:700;color:#1a1a1a;letter-spacing:-.3px}
 .logo-sub{font-size:12px;color:#888;margin-top:1px}
-.tagline{font-size:14px;color:#666;line-height:1.6;max-width:560px}
-
-/* Nav tabs */
+.tagline{font-size:14px;color:#666;line-height:1.6;max-width:580px}
 .nav-tabs{display:flex;gap:4px;margin-bottom:1.5rem;background:#eae8e3;border-radius:10px;padding:4px}
 .nav-tab{flex:1;padding:9px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:#888;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .15s}
 .nav-tab.active{background:#fff;color:#1a1a1a;box-shadow:0 1px 4px rgba(0,0,0,.1)}
 .nav-tab i{font-size:15px}
-
-/* Form */
 .card{background:#fff;border:1px solid #e0ded8;border-radius:14px;padding:1.5rem}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .form-group{display:flex;flex-direction:column;gap:6px}
@@ -35,13 +29,9 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
 .optional-note{font-weight:400;color:#999}
 .gen-btn{width:100%;padding:13px;background:#1a3a5c;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px}
 .gen-btn:hover{background:#0f2a45}
-
-/* Loading */
 #loadingSection{display:none;text-align:center;padding:3rem 0;color:#888}
 .spinner{display:inline-block;width:22px;height:22px;border:2.5px solid #e0ded8;border-top-color:#1a3a5c;border-radius:50%;animation:spin .75s linear infinite;margin-bottom:1rem}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* Results */
 #results{display:none}
 .biz-headline{font-size:16px;font-weight:600;color:#1a1a1a;margin-bottom:2px}
 .biz-sub{font-size:13px;color:#888}
@@ -53,20 +43,32 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
 .sum-num{font-size:22px;font-weight:700;color:#1a1a1a;line-height:1}
 .sum-lbl{font-size:11px;color:#888;margin-top:3px}
 
-/* Section headers */
-.sec-hdr{display:flex;align-items:center;gap:8px;margin:1.25rem 0 .75rem;padding-bottom:.5rem;border-bottom:1px solid #e0ded8}
-.sec-hdr i{font-size:17px}
-.sec-title{font-size:14px;font-weight:600;color:#1a1a1a}
+/* Tier headers */
+.tier-hdr{border-radius:12px;padding:1rem 1.25rem;margin:1.5rem 0 .75rem;border:1px solid}
+.tier-hdr.t1{background:#f0f7ff;border-color:#c0d8f0}
+.tier-hdr.t2{background:#f4f1e8;border-color:#d8cfa8}
+.tier-hdr.t3{background:#f3f9ee;border-color:#b8d8a0}
+.tier-title{font-size:15px;font-weight:700;margin-bottom:3px;display:flex;align-items:center;gap:8px}
+.tier-title.t1{color:#0c3a6a}
+.tier-title.t2{color:#5a3e00}
+.tier-title.t3{color:#1e5c00}
+.tier-desc{font-size:13px;line-height:1.6}
+.tier-desc.t1{color:#3a6090}
+.tier-desc.t2{color:#7a5a20}
+.tier-desc.t3{color:#3a7a10}
+
+.sec-hdr{display:flex;align-items:center;gap:8px;margin:1rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid #e0ded8}
+.sec-hdr i{font-size:16px}
+.sec-title{font-size:13px;font-weight:600;color:#1a1a1a}
 .sec-badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px}
 .fed-badge{background:#e6f1fb;color:#0c447c}
 .state-badge{background:#eaf3de;color:#27500a}
 .city-badge{background:#faeeda;color:#854f0b}
 
-/* Task cards */
-.task-card{background:#fff;border:1px solid #e0ded8;border-radius:12px;margin-bottom:9px;overflow:hidden;transition:border-color .15s}
+.task-card{background:#fff;border:1px solid #e0ded8;border-radius:12px;margin-bottom:8px;overflow:hidden;transition:border-color .15s}
 .task-card:hover{border-color:#b0aaa0}
 .task-card.done{opacity:.5}
-.task-header{display:flex;align-items:flex-start;gap:12px;padding:1rem 1.25rem;cursor:pointer}
+.task-header{display:flex;align-items:flex-start;gap:12px;padding:.9rem 1.1rem;cursor:pointer}
 .check-circle{width:24px;height:24px;border-radius:50%;border:1.5px solid #ccc;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all .15s}
 .task-card.done .check-circle{background:#27500a;border-color:#27500a}
 .task-card.done .check-circle i{color:#fff;font-size:13px}
@@ -75,28 +77,62 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
 .task-name{font-size:14px;font-weight:600;color:#1a1a1a}
 .task-card.done .task-name{text-decoration:line-through;color:#999}
 .expand-btn{background:none;border:none;color:#aaa;cursor:pointer;padding:2px;flex-shrink:0;font-size:16px;line-height:1}
-.expand-btn:hover{color:#555}
 .task-meta{display:flex;gap:6px;flex-wrap:wrap}
 .pill{font-size:11px;padding:2px 7px;border-radius:20px;font-weight:500;display:inline-flex;align-items:center;gap:3px}
 .pill-crit{background:#fcebeb;color:#a32d2d}
 .pill-high{background:#faeeda;color:#854f0b}
 .pill-med{background:#eaf3de;color:#3b6d11}
 .pill-neutral{background:#f1efe8;color:#5f5e5a}
-
-/* Expandable detail panel */
-.task-detail{display:none;border-top:1px solid #f0eee8;padding:1rem 1.25rem 1rem 3.5rem;background:#faf9f7}
+.task-detail{display:none;border-top:1px solid #f0eee8;padding:.9rem 1.1rem .9rem 3.4rem;background:#faf9f7}
 .task-detail.open{display:block}
-.task-desc{font-size:13px;color:#555;line-height:1.6;margin-bottom:10px}
+.task-desc{font-size:13px;color:#444;line-height:1.7;margin-bottom:10px}
+.task-steps{margin:8px 0 10px;padding-left:0;list-style:none}
+.task-steps li{font-size:13px;color:#555;line-height:1.6;padding:.3rem 0;border-bottom:1px solid #f0eee8;display:flex;gap:8px}
+.task-steps li:last-child{border-bottom:none}
+.step-num{font-weight:700;color:#1a3a5c;flex-shrink:0;min-width:18px}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
 .detail-item{font-size:12px;color:#888}
 .detail-item strong{color:#444;display:block;margin-bottom:1px}
 .task-link{font-size:13px;color:#185fa5;display:inline-flex;align-items:center;gap:4px;text-decoration:none}
 .task-link:hover{text-decoration:underline}
-.task-link i{font-size:12px}
-.glossary-hint{font-size:11px;color:#aaa;margin-top:8px;display:flex;align-items:center;gap:4px;cursor:pointer}
-.glossary-hint:hover{color:#185fa5}
 
-/* Upgrade */
+/* Callout boxes */
+.callout{border-radius:10px;padding:1rem 1.25rem;margin:1rem 0;border:1px solid}
+.callout.blue{background:#f0f7ff;border-color:#c0d8f0}
+.callout.amber{background:#fdf8ee;border-color:#e8d090}
+.callout.green{background:#f3f9ee;border-color:#b8d8a0}
+.callout.red{background:#fff5f5;border-color:#f0c0c0}
+.callout-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem;display:flex;align-items:center;gap:6px}
+.callout.blue .callout-title{color:#0c447c}
+.callout.amber .callout-title{color:#7a5000}
+.callout.green .callout-title{color:#1e5c00}
+.callout.red .callout-title{color:#8a1a1a}
+.callout p{font-size:13px;line-height:1.7;color:#444}
+.callout p + p{margin-top:.4rem}
+.callout ul{font-size:13px;color:#444;line-height:1.7;padding-left:1.1rem;margin-top:.35rem}
+.callout ul li{margin-bottom:.2rem}
+.callout strong{font-weight:600}
+
+/* Shortcut box */
+.shortcut-box{background:#1a3a5c;border-radius:12px;padding:1.25rem 1.5rem;margin:1.5rem 0;color:#fff}
+.shortcut-title{font-size:14px;font-weight:700;margin-bottom:.5rem;display:flex;align-items:center;gap:8px;color:#fff}
+.shortcut-body{font-size:13px;line-height:1.7;color:#b8cfe8}
+.shortcut-body strong{color:#fff}
+.shortcut-or{text-align:center;font-size:12px;color:#7a9ab8;margin:.75rem 0;letter-spacing:.08em;text-transform:uppercase}
+
+/* Name change section */
+.name-section{background:#fff;border:1px solid #e0ded8;border-radius:14px;padding:1.5rem;margin-top:1.5rem}
+.name-section-title{font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:.4rem;display:flex;align-items:center;gap:8px}
+.name-section-sub{font-size:13px;color:#666;margin-bottom:1.25rem;line-height:1.6}
+.name-option{background:#faf9f7;border:1px solid #e0ded8;border-radius:10px;padding:1rem 1.25rem;margin-bottom:.75rem}
+.name-option-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.4rem;cursor:pointer}
+.name-option-title{font-size:14px;font-weight:600;color:#1a1a1a;display:flex;align-items:center;gap:8px}
+.name-option-cost{font-size:12px;font-weight:600;color:#1a3a5c;background:#e6f1fb;padding:2px 8px;border-radius:20px}
+.name-option-body{display:none;font-size:13px;color:#555;line-height:1.7;margin-top:.5rem}
+.name-option-body.open{display:block}
+.name-option-body ul{padding-left:1.1rem;margin-top:.35rem}
+.name-option-body ul li{margin-bottom:.2rem}
+
 .upgrade-banner{background:#fff;border:1px solid #e0ded8;border-radius:14px;padding:1.25rem 1.5rem;margin-top:1.5rem;display:flex;gap:1.25rem;align-items:flex-start}
 .upgrade-icon{width:40px;height:40px;background:#1a3a5c;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .upgrade-icon i{color:#fff;font-size:20px}
@@ -108,8 +144,11 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
 .reset-btn{background:transparent;border:1px solid #d5d3cc;border-radius:8px;padding:8px 14px;font-size:13px;color:#888;cursor:pointer;margin-top:1rem;display:inline-flex;align-items:center;gap:6px}
 .reset-btn:hover{background:#f1efe8}
 .error-box{background:#fcebeb;border:1px solid #f09595;border-radius:10px;padding:.9rem 1.25rem;color:#791f1f;font-size:14px;margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.disclaimer-bar{background:#faf8f2;border:1px solid #e8e4d8;border-radius:8px;padding:.6rem 1rem;margin-top:1rem;display:flex;align-items:flex-start;gap:8px}
+.disclaimer-bar i{color:#b08020;font-size:15px;flex-shrink:0;margin-top:1px}
+.disclaimer-bar span{font-size:12px;color:#7a6a40;line-height:1.5}
 
-/* Reference page */
+/* Reference */
 #refPage{display:none}
 .ref-search-wrap{position:relative;margin-bottom:1.25rem}
 .ref-search-wrap i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#aaa;font-size:16px}
@@ -125,14 +164,12 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
 .ref-body.open{display:block}
 .ref-body p{font-size:13px;color:#555;line-height:1.65;margin-top:.75rem}
 .ref-body .ref-link{font-size:13px;color:#185fa5;display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-top:.5rem}
-.ref-body .ref-link:hover{text-decoration:underline}
 .ref-tag{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;flex-shrink:0}
 .ref-tag-fed{background:#e6f1fb;color:#0c447c}
 .ref-tag-state{background:#eaf3de;color:#27500a}
 .ref-tag-both{background:#f4f1e8;color:#5f5e5a}
 
-
-/* ToS Modal */
+/* Modal */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .2s}
 .modal-overlay.open{opacity:1;pointer-events:all}
 .modal-box{background:#fff;border-radius:16px;max-width:560px;width:100%;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.25)}
@@ -149,16 +186,10 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
 .tos-check-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:1rem;cursor:pointer}
 .tos-check-row input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:1px;accent-color:#1a3a5c;cursor:pointer}
 .tos-check-row span{font-size:13px;color:#444;line-height:1.5}
-.tos-check-row a{color:#185fa5;text-decoration:underline}
 .modal-accept-btn{width:100%;padding:13px;background:#1a3a5c;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;opacity:.4;pointer-events:none;transition:opacity .2s}
 .modal-accept-btn.enabled{opacity:1;pointer-events:all}
 .modal-accept-btn.enabled:hover{background:#0f2a45}
-.disclaimer-bar{background:#faf8f2;border:1px solid #e8e4d8;border-radius:8px;padding:.6rem 1rem;margin-top:1rem;display:flex;align-items:flex-start;gap:8px}
-.disclaimer-bar i{color:#b08020;font-size:15px;flex-shrink:0;margin-top:1px}
-.disclaimer-bar span{font-size:12px;color:#7a6a40;line-height:1.5}
 
-
-/* Site footer */
 .site-footer{margin-top:2.5rem;padding:1.5rem 0 2rem;border-top:1px solid #e0ded8}
 .footer-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap}
 .footer-logo{display:flex;align-items:center;gap:8px}
@@ -177,56 +208,41 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
   .form-grid{grid-template-columns:1fr}
   .detail-grid{grid-template-columns:1fr}
   .upgrade-banner{flex-direction:column}
+  .sum-grid{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
 <div class="shell">
 
-<!-- ToS / Disclaimer Modal -->
+<!-- ToS Modal -->
 <div class="modal-overlay" id="tosModal">
   <div class="modal-box">
     <div class="modal-header">
-      <h2><i class="ti ti-shield-check" style="color:#1a3a5c;margin-right:6px"></i>Terms of Use &amp; Disclaimer</h2>
-      <p>BizLaunch is operated by <strong>Warhorse LLC</strong> — please read and accept before generating your checklist</p>
+      <h2><i class="ti ti-shield-check" style="color:#1a3a5c;margin-right:6px"></i>Quick heads up before we start</h2>
+      <p>BizLaunch is operated by <strong>Warhorse LLC</strong></p>
     </div>
     <div class="modal-body">
-      <h3>Informational Use Only</h3>
-      <p>BizLaunch provides general business compliance information for <strong>educational and informational purposes only</strong>. The checklists, requirements, and guidance generated by this tool do <strong>not</strong> constitute legal advice, tax advice, accounting advice, or any other professional advice.</p>
-
-      <h3>No Attorney-Client or CPA Relationship</h3>
-      <p>Use of BizLaunch does not create an attorney-client relationship, accountant-client relationship, or any other professional relationship between you and <strong>Warhorse LLC</strong>, its members, or any affiliated parties. You should not rely on this tool as a substitute for advice from a licensed attorney, CPA, or other qualified professional.</p>
-
-      <h3>Accuracy &amp; Completeness</h3>
-      <p>While we work to keep information current, laws, regulations, fees, and filing requirements change frequently and vary by individual circumstance. BizLaunch makes no representations or warranties that the information provided is:</p>
-      <ul>
-        <li>Complete, accurate, or up to date</li>
-        <li>Applicable to your specific situation</li>
-        <li>Free from errors or omissions</li>
-      </ul>
-      <p>Always verify requirements directly with the relevant government agency before taking action.</p>
-
-      <h3>Limitation of Liability</h3>
-      <p><strong>Warhorse LLC</strong>, its members, employees, and agents shall not be liable for any damages, penalties, fines, losses, or other consequences arising from your use of or reliance on information provided by BizLaunch. You use this tool entirely at your own risk.</p>
-
-      <h3>Consult a Professional</h3>
-      <p>We strongly recommend consulting a licensed business attorney and CPA before making any legal or tax decisions for your business. Requirements vary significantly based on your specific industry, location, business activities, and individual circumstances.</p>
-
-      <h3>Changes to These Terms</h3>
-      <p>Warhorse LLC reserves the right to update these terms at any time without prior notice. Continued use of BizLaunch after changes are posted constitutes your acceptance of the revised terms. For questions about these terms, contact us at <strong>support@warhorsellc.co</strong>.</p>
+      <h3>This is information, not legal advice</h3>
+      <p>BizLaunch tells you what steps exist and where to go. It doesn't tell you what's right for your specific situation — that's what lawyers and CPAs are for. Use this as a starting point, not the final word.</p>
+      <h3>We try to keep it current, but things change</h3>
+      <p>Filing fees, deadlines, and requirements change. Always double-check with the actual government website before you submit anything or write a check.</p>
+      <h3>We're not liable if something goes sideways</h3>
+      <p>Warhorse LLC, its members, and anyone connected to it aren't responsible for penalties, fines, or problems that come from using this tool. You're an adult — verify before you act.</p>
+      <h3>Questions?</h3>
+      <p>Hit us at <strong>warhorsellc.co@gmail.com</strong> — we're real people.</p>
     </div>
     <div class="modal-footer">
       <label class="tos-check-row">
         <input type="checkbox" id="tosCheckbox" onchange="toggleAcceptBtn()">
-        <span>I have read and understand that BizLaunch provides <strong>general information only</strong> — not legal or tax advice — and I agree to the <a href="#" onclick="return false;">Terms of Use</a>.</span>
+        <span>Got it — this is general info, not legal advice. I'll verify anything important before I act on it.</span>
       </label>
       <button class="modal-accept-btn" id="modalAcceptBtn" onclick="acceptTos()">
-        <i class="ti ti-check"></i> I Understand — Generate My Checklist
+        <i class="ti ti-check"></i> Let's build my checklist
       </button>
     </div>
   </div>
 </div>
-
 
 <div class="hero">
   <div class="logo">
@@ -236,26 +252,21 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
       <div class="logo-sub">Small Business Compliance Checklist</div>
     </div>
   </div>
-  <p class="tagline">Pick your state and business type — get the exact federal and state steps to make your business legally operating, not just registered.</p>
+  <p class="tagline">Tell us your state and business type. We'll tell you exactly what you need to do — step by step, no lawyer talk.</p>
 </div>
 
 <div class="nav-tabs">
-  <button class="nav-tab active" id="tabChecklist" onclick="showTab('checklist')">
-    <i class="ti ti-list-check"></i> Checklist
-  </button>
-  <button class="nav-tab" id="tabRef" onclick="showTab('ref')">
-    <i class="ti ti-book-2"></i> Term Reference
-  </button>
+  <button class="nav-tab active" id="tabChecklist" onclick="showTab('checklist')"><i class="ti ti-list-check"></i> Checklist</button>
+  <button class="nav-tab" id="tabRef" onclick="showTab('ref')"><i class="ti ti-book-2"></i> Term Reference</button>
 </div>
 
 <!-- CHECKLIST TAB -->
 <div id="checklistTab">
   <div id="errorContainer"></div>
-
   <div id="formSection" class="card">
     <div class="form-grid">
       <div class="form-group">
-        <label for="stateSelect">Your state</label>
+        <label>Your state</label>
         <select id="stateSelect">
           <option value="">— Select state —</option>
           <option>Arizona</option>
@@ -266,7 +277,7 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
         <div style="font-size:11px;color:#aaa;margin-top:5px;display:flex;align-items:center;gap:4px"><i class="ti ti-info-circle" style="font-size:12px"></i> More states coming soon</div>
       </div>
       <div class="form-group">
-        <label for="bizType">Business structure</label>
+        <label>Business structure</label>
         <select id="bizType">
           <option value="">— Select type —</option>
           <option>Sole Proprietorship</option>
@@ -281,40 +292,97 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
     </div>
     <div class="form-grid" style="margin-bottom:14px">
       <div class="form-group">
-        <label for="cityInput">City / municipality</label>
-        <input type="text" id="cityInput" placeholder="e.g. Phoenix, Austin, Denver...">
+        <label>City / municipality</label>
+        <input type="text" id="cityInput" placeholder="e.g. Phoenix, Austin, Nashville...">
       </div>
       <div class="form-group">
-        <label for="industry">Industry / business type <span class="optional-note">(optional)</span></label>
-        <input type="text" id="industry" placeholder="e.g. landscaping, food truck, roofing...">
+        <label>Industry / business type <span class="optional-note">(optional)</span></label>
+        <input type="text" id="industry" placeholder="e.g. barber, food truck, roofing...">
       </div>
     </div>
-    <div class="disclaimer-bar"><i class="ti ti-info-circle"></i><span>This tool provides general compliance information only — not legal or tax advice. You'll confirm this before generating.</span></div>
-    <button class="gen-btn" onclick="showTosModal()" style="margin-top:12px">
-      <i class="ti ti-list-check"></i> Build my compliance checklist
-    </button>
+    <div class="form-group" style="margin-bottom:14px">
+      <label>Where do you operate? <span class="optional-note">(optional)</span></label>
+      <select id="opLocation">
+        <option value="">— Select —</option>
+        <option value="home">From my home (clients come to me)</option>
+        <option value="home_noclients">From my home (no clients come to me)</option>
+        <option value="commercial">Commercial location / shop</option>
+        <option value="mobile">Mobile / I go to the client</option>
+        <option value="online">Online only</option>
+      </select>
+    </div>
+    <div class="disclaimer-bar"><i class="ti ti-info-circle"></i><span>General info only — not legal or tax advice. You'll confirm this before generating.</span></div>
+    <button class="gen-btn" onclick="showTosModal()" style="margin-top:12px"><i class="ti ti-list-check"></i> Build my compliance checklist</button>
   </div>
 
   <div id="loadingSection">
     <div class="spinner"></div>
-    <div style="font-size:14px;color:#888">Pulling federal and state requirements...</div>
-    <div style="font-size:12px;color:#bbb;margin-top:6px">Takes about 15 seconds</div>
+    <div style="font-size:14px;color:#888">Putting your checklist together...</div>
+    <div style="font-size:12px;color:#bbb;margin-top:6px">Takes about 15–20 seconds</div>
   </div>
 
   <div id="results">
     <div id="summarySection"></div>
     <div id="checklistContent"></div>
+
+    <!-- Name change section -->
+    <div class="name-section" id="nameSection">
+      <div class="name-section-title"><i class="ti ti-pencil" style="color:#1a3a5c"></i> Want a different business name?</div>
+      <div class="name-section-sub">Already have an LLC but want to go by something else — or just tired of your current name? Here are your options, from easiest to most work.</div>
+
+      <div class="name-option">
+        <div class="name-option-hdr" onclick="toggleNameOpt('n1')">
+          <div class="name-option-title"><span style="background:#e6f1fb;color:#0c447c;font-size:12px;font-weight:700;padding:2px 8px;border-radius:20px">1</span> Just rebrand — change nothing official</div>
+          <div style="display:flex;align-items:center;gap:8px"><span class="name-option-cost">Free</span><i class="ti ti-chevron-down" id="icon-n1" style="color:#aaa;font-size:14px;transition:transform .2s"></i></div>
+        </div>
+        <div class="name-option-body" id="n1">Update your website, business cards, and social media to the new name. Your LLC's legal name doesn't change — but most clients never see that anyway. They see whatever you put on your website. This is the move if you're just rebranding, not legally changing anything.
+          <ul><li>No filing required</li><li>No cost</li><li>Same LLC, EIN, and bank account</li><li>Best for: you just don't like how the name looks publicly</li></ul>
+        </div>
+      </div>
+
+      <div class="name-option">
+        <div class="name-option-hdr" onclick="toggleNameOpt('n2')">
+          <div class="name-option-title"><span style="background:#e6f1fb;color:#0c447c;font-size:12px;font-weight:700;padding:2px 8px;border-radius:20px">2</span> File a DBA — operate under a trade name</div>
+          <div style="display:flex;align-items:center;gap:8px"><span class="name-option-cost">~$10–$50</span><i class="ti ti-chevron-down" id="icon-n2" style="color:#aaa;font-size:14px;transition:transform .2s"></i></div>
+        </div>
+        <div class="name-option-body" id="n2">"DBA" stands for "doing business as." Your LLC stays the same — same name, same EIN, same bank. You just file a trade name with your state or county so you can legally market under a different name and accept checks/payments in that name.
+          <ul><li>File with your county clerk or state</li><li>Same LLC, same EIN, same bank account</li><li>You can have multiple DBAs under one LLC</li><li>Best for: your LLC is "Smith Holdings LLC" but you want to go by "Phoenix Detail Co"</li></ul>
+        </div>
+      </div>
+
+      <div class="name-option">
+        <div class="name-option-hdr" onclick="toggleNameOpt('n3')">
+          <div class="name-option-title"><span style="background:#e6f1fb;color:#0c447c;font-size:12px;font-weight:700;padding:2px 8px;border-radius:20px">3</span> Amend your Articles — change the legal name</div>
+          <div style="display:flex;align-items:center;gap:8px"><span class="name-option-cost">~$25–$85</span><i class="ti ti-chevron-down" id="icon-n3" style="color:#aaa;font-size:14px;transition:transform .2s"></i></div>
+        </div>
+        <div class="name-option-body" id="n3">File an amendment with your state to officially change your LLC's legal name. Your EIN stays the same. Your bank account stays the same. You just update the legal name on file with the state — takes a few weeks to process.
+          <ul><li>File with your state's corporation commission or Secretary of State</li><li>Same EIN — no new tax ID needed</li><li>Update your bank, contracts, and licenses to reflect the new name</li><li>Best for: you want the legal name to match how you actually operate</li></ul>
+        </div>
+      </div>
+
+      <div class="name-option">
+        <div class="name-option-hdr" onclick="toggleNameOpt('n4')">
+          <div class="name-option-title"><span style="background:#faeeda;color:#854f0b;font-size:12px;font-weight:700;padding:2px 8px;border-radius:20px">4</span> Start a new LLC — only if there's a real reason</div>
+          <div style="display:flex;align-items:center;gap:8px"><span class="name-option-cost">$50–$300+</span><i class="ti ti-chevron-down" id="icon-n4" style="color:#aaa;font-size:14px;transition:transform .2s"></i></div>
+        </div>
+        <div class="name-option-body" id="n4">New LLC, new EIN, new bank account, new registrations, new everything. More work than most people need. This only makes sense if there's a real reason to separate the businesses.
+          <ul><li>Different partners or ownership structure</li><li>Totally different industry with different liability risk</li><li>Old LLC has legal or financial problems you want separated</li><li>The new venture is genuinely a different business, not just a rebrand</li></ul>
+          <strong>If you just don't like the name — use options 1, 2, or 3 instead. Save yourself the paperwork.</strong>
+        </div>
+      </div>
+    </div>
+
     <div class="upgrade-banner">
       <div class="upgrade-icon"><i class="ti ti-rocket"></i></div>
       <div class="upgrade-body">
-        <h3>BizLaunch Pro — step-by-step walkthroughs</h3>
-        <p>Screenshots, pre-filled templates, and deadline reminders for every item on your checklist.</p>
+        <h3>BizLaunch Pro — we walk you through it</h3>
+        <p>Screenshots, pre-filled templates, deadline reminders, and step-by-step walkthroughs for every item on your list.</p>
         <div class="pro-features">
           <span class="pro-feat">EIN application walkthrough</span>
           <span class="pro-feat">Operating agreement template</span>
-          <span class="pro-feat">BOI/FinCEN filing guide</span>
           <span class="pro-feat">Annual report reminders</span>
           <span class="pro-feat">State tax registration help</span>
+          <span class="pro-feat">Save your checklist progress</span>
         </div>
         <div class="upgrade-price">$9/month or $79/year — cancel anytime</div>
       </div>
@@ -327,452 +395,243 @@ select:focus,input:focus{border-color:#1a3a5c;box-shadow:0 0 0 3px rgba(26,58,92
 <div id="refPage">
   <div class="ref-search-wrap">
     <i class="ti ti-search"></i>
-    <input type="text" id="refSearch" placeholder="Search terms... (EIN, BOI, LLC, S-Corp...)" oninput="filterRef()">
+    <input type="text" id="refSearch" placeholder="Search terms... EIN, DBA, LLC, TPT..." oninput="filterRef()">
   </div>
   <div id="refContent"></div>
 </div>
 
-
-<!-- Site Footer -->
 <footer class="site-footer">
   <div class="footer-top">
     <div class="footer-logo">
       <div class="footer-logo-mark"><i class="ti ti-building-store"></i></div>
-      <div>
-        <div class="footer-brand">BizLaunch</div>
-        <div class="footer-operator">Operated by Warhorse LLC</div>
-      </div>
+      <div><div class="footer-brand">BizLaunch</div><div class="footer-operator">Operated by Warhorse LLC</div></div>
     </div>
     <div class="footer-links">
       <a href="#" onclick="showTosModal();return false;">Terms of Use</a>
-      <a href="mailto:support@warhorsellc.co">Contact</a>
+      <a href="mailto:warhorsellc.co@gmail.com">Contact</a>
     </div>
   </div>
   <div class="footer-divider"></div>
-  <p class="footer-disclaimer">
-    <strong>Disclaimer:</strong> BizLaunch is operated by Warhorse LLC, a limited liability company. The information provided by BizLaunch is for general informational and educational purposes only and does not constitute legal, tax, accounting, or other professional advice. Use of this tool does not create any professional-client relationship. Warhorse LLC makes no warranties regarding the accuracy, completeness, or timeliness of the information provided. Always consult a licensed attorney and CPA before making legal or tax decisions. &copy; 2025 Warhorse LLC. All rights reserved.
-  </p>
+  <p class="footer-disclaimer"><strong>Heads up:</strong> BizLaunch is operated by Warhorse LLC. Everything here is general info — not legal or tax advice, and not a substitute for talking to a real lawyer or CPA. Laws and fees change, so verify anything important directly with the government agency before you act. &copy; 2026 Warhorse LLC. All rights reserved.</p>
 </footer>
+</div>
 
-</div><!-- .shell -->
 <script>
-let tasks = [];
-let refOpen = {};
+let tasks=[];
+let tosAccepted=false;
 
-/* ── TAB NAVIGATION ── */
-function showTab(tab) {
-  document.getElementById('checklistTab').style.display = tab === 'checklist' ? 'block' : 'none';
-  document.getElementById('refPage').style.display = tab === 'ref' ? 'block' : 'none';
-  document.getElementById('tabChecklist').classList.toggle('active', tab === 'checklist');
-  document.getElementById('tabRef').classList.toggle('active', tab === 'ref');
-  if (tab === 'ref') renderRef();
+function showTab(tab){
+  document.getElementById('checklistTab').style.display=tab==='checklist'?'block':'none';
+  document.getElementById('refPage').style.display=tab==='ref'?'block':'none';
+  document.getElementById('tabChecklist').classList.toggle('active',tab==='checklist');
+  document.getElementById('tabRef').classList.toggle('active',tab==='ref');
+  if(tab==='ref')renderRef();
 }
 
-/* ── GLOSSARY DATA ── */
-const GLOSSARY = [
-  {
-    cat: 'Federal IDs & Tax',
-    terms: [
-      {
-        term: 'EIN', full: 'Employer Identification Number',
-        tag: 'fed',
-        body: 'Your business\'s federal tax ID — like a Social Security number but for your company. Required to open a business bank account, hire employees, file business taxes, and set up payroll. Free to get at IRS.gov and issued instantly online. Even if you have no employees, you should get one.',
-        link: 'https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online',
-        linkLabel: 'Apply free at IRS.gov'
-      },
-      {
-        term: 'Federal Tax ID', full: 'Federal Tax Identification Number',
-        tag: 'fed',
-        body: 'Same thing as an EIN. Some banks and forms call it a "Federal Tax ID" or "FEIN." When someone asks for your Federal Tax ID, give them your EIN.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'Self-Employment Tax', full: 'SE Tax',
-        tag: 'fed',
-        body: 'If you own an LLC or sole proprietorship, you pay both the employee AND employer share of Social Security and Medicare — totaling 15.3% on net earnings. You report this on Schedule SE with your Form 1040. You can deduct half of it on your personal return.',
-        link: 'https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes',
-        linkLabel: 'IRS Self-Employment Tax guide'
-      },
-      {
-        term: 'Estimated Quarterly Taxes', full: 'Form 1040-ES',
-        tag: 'fed',
-        body: '2026 due dates: April 15, June 15, September 15, and January 15, 2027. As a business owner with no employer withholding, you pay the IRS quarterly. Missing these triggers an underpayment penalty even if you pay in full at tax time.',
-        link: 'https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes',
-        linkLabel: 'IRS Estimated Tax info'
-      },
-      {
-        term: 'Form 2553', full: 'S-Corporation Election',
-        tag: 'fed',
-        body: 'If you want your LLC or corporation to be taxed as an S-Corp (which can save on self-employment taxes once profit is high enough), you file Form 2553 with the IRS. Must be filed within 75 days of forming the business or by March 15 for the current tax year.',
-        link: 'https://www.irs.gov/forms-pubs/about-form-2553',
-        linkLabel: 'IRS Form 2553 info'
-      },
-    ]
-  },
-  {
-    cat: 'Federal Compliance',
-    terms: [
-      {
-        term: 'BOI Report', full: 'Beneficial Ownership Information Report',
-        tag: 'fed',
-        body: 'As of March 2025, US-formed LLCs and corporations are EXEMPT from BOI filing under a FinCEN interim final rule. Only foreign-formed companies registered to do business in the US must still file. The Corporate Transparency Act remains law and could be reinstated — monitor fincen.gov for updates.',
-        link: 'https://boiefiling.fincen.gov',
-        linkLabel: 'File BOI at FinCEN.gov'
-      },
-      {
-        term: 'FinCEN', full: 'Financial Crimes Enforcement Network',
-        tag: 'fed',
-        body: 'A bureau of the U.S. Department of the Treasury. They collect the BOI (Beneficial Ownership) reports and use them to track money laundering and financial crimes. You don\'t deal with FinCEN often — mainly for the BOI report.',
-        link: 'https://www.fincen.gov/boi',
-        linkLabel: 'FinCEN BOI info'
-      },
-      {
-        term: 'Corporate Transparency Act', full: 'CTA',
-        tag: 'fed',
-        body: 'A 2021 federal law that took effect January 2024. It requires most small businesses to disclose their beneficial owners to FinCEN via the BOI report. Designed to stop shell companies from hiding criminal activity. Affects almost every LLC and corporation.',
-        link: 'https://www.fincen.gov/boi',
-        linkLabel: 'FinCEN CTA info'
-      },
-      {
-        term: 'Federal Business License', full: null,
-        tag: 'fed',
-        body: 'Most small businesses don\'t need a federal license — but some industries do: firearms dealers (ATF), alcohol/tobacco (TTB), agriculture, aviation, maritime, broadcasting, and investment advisors. If your industry is regulated at the federal level, check with the relevant agency.',
-        link: 'https://www.sba.gov/business-guide/launch-your-business/apply-licenses-permits',
-        linkLabel: 'SBA license guide'
-      },
-    ]
-  },
-  {
-    cat: 'Business Structures',
-    terms: [
-      {
-        term: 'LLC', full: 'Limited Liability Company',
-        tag: 'both',
-        body: 'The most popular structure for small businesses. Your personal assets (house, car, savings) are protected if the business gets sued — as long as you keep personal and business finances separate. Taxed as a pass-through by default (profits flow to your personal return). Formed by filing Articles of Organization with your state.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'Sole Proprietorship', full: null,
-        tag: 'both',
-        body: 'The simplest structure — no formal filing needed. You and the business are legally the same entity. Easy to start but offers zero liability protection: if the business is sued, your personal assets are at risk. Common for freelancers and very small one-person operations.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'S-Corporation', full: 'S-Corp',
-        tag: 'both',
-        body: 'A tax election (not a separate structure) that lets LLC or corporate owners pay themselves a salary and take the rest as a distribution — avoiding self-employment tax on the distribution portion. Can save thousands annually once profit exceeds roughly $40–50K. Requires IRS Form 2553 and stricter bookkeeping.',
-        link: 'https://www.irs.gov/businesses/small-businesses-self-employed/s-corporations',
-        linkLabel: 'IRS S-Corp guide'
-      },
-      {
-        term: 'C-Corporation', full: 'C-Corp',
-        tag: 'both',
-        body: 'A separate legal entity taxed at the corporate rate (21%). Profits can be taxed twice — once at the corporate level, once when paid as dividends. Generally used by startups seeking venture capital or businesses planning to go public. More complex and expensive to maintain.',
-        link: null, linkLabel: null
-      },
-    ]
-  },
-  {
-    cat: 'State & Local Requirements',
-    terms: [
-      {
-        term: 'Articles of Organization', full: 'LLC Formation Document',
-        tag: 'state',
-        body: 'The document you file with your state\'s Secretary of State to officially create your LLC. Includes your business name, address, registered agent, and member info. Usually costs $50–$500 depending on state. Once approved, your LLC legally exists.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'Registered Agent', full: null,
-        tag: 'state',
-        body: 'A person or company designated to receive legal documents (lawsuits, government notices) on behalf of your business. Required in every state. Must have a physical address in the state where your business is registered. You can be your own registered agent, or hire a service for $50–$300/year.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'Operating Agreement', full: null,
-        tag: 'state',
-        body: 'An internal document that lays out how your LLC is run — ownership percentages, voting rights, profit distribution, and what happens if a member leaves. Not always required by the state but critical to have. Without one, state default rules govern your LLC, which may not match your intentions.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'Annual Report', full: 'Statement of Information / Biennial Report',
-        tag: 'state',
-        body: 'Most states require LLCs and corporations to file a yearly (or every-other-year) report confirming your business information and paying a fee. Missing this can result in late fees, penalties, or your LLC being administratively dissolved. Deadlines and costs vary by state.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'State Tax ID', full: 'State EIN / State Taxpayer ID',
-        tag: 'state',
-        body: 'Separate from your federal EIN. Required in most states to pay state income tax, collect sales tax, and run payroll. Obtained from your state\'s Department of Revenue or Department of Taxation. Free to register in most states.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'Sales Tax Permit', full: 'Seller\'s Permit / Sales & Use Tax License',
-        tag: 'state',
-        body: 'If you sell physical goods (or some services) in a state with sales tax, you must collect sales tax from customers and remit it to the state. You need a sales tax permit before you make your first taxable sale. Penalties for collecting without a permit — or not collecting when required — can be steep.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'DBA', full: 'Doing Business As',
-        tag: 'state',
-        body: 'Also called a fictitious business name or trade name. If you operate under a name different from your legal LLC name (e.g., your LLC is "Smith Consulting LLC" but you go by "Phoenix Digital"), you register a DBA with your county or state. Usually low cost ($10–$100) and straightforward.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'Business License', full: 'General Business License',
-        tag: 'state',
-        body: 'Many states and cities require a general business license just to operate — separate from any industry-specific license. This is your basic permission slip to do business in that jurisdiction. Some states issue them at the state level; others at the city or county level only.',
-        link: null, linkLabel: null
-      },
-    ]
-  },
-  {
-    cat: 'Banking & Finance',
-    terms: [
-      {
-        term: 'Business Bank Account', full: null,
-        tag: 'both',
-        body: 'Keeping business money separate from personal money is required to maintain your LLC\'s liability protection ("piercing the corporate veil"). You\'ll need your EIN and Articles of Organization to open one. Do this before you take in any revenue.',
-        link: null, linkLabel: null
-      },
-      {
-        term: 'Piercing the Corporate Veil', full: null,
-        tag: 'both',
-        body: 'Legal term for when a court holds the owner personally liable for business debts, ignoring the LLC\'s liability protection. Happens when owners mix personal and business funds, fail to maintain proper records, or don\'t follow LLC formalities. Reason #1 to keep finances separate.',
-        link: null, linkLabel: null
-      },
-    ]
-  }
-];
-
-/* ── REFERENCE RENDER ── */
-function renderRef() {
-  const container = document.getElementById('refContent');
-  let html = '';
-  GLOSSARY.forEach(cat => {
-    html += `<div class="ref-category" data-cat="${cat.cat}">`;
-    html += `<div class="ref-cat-label">${cat.cat}</div>`;
-    cat.terms.forEach(t => {
-      const tagClass = t.tag === 'fed' ? 'ref-tag-fed' : t.tag === 'state' ? 'ref-tag-state' : 'ref-tag-both';
-      const tagLabel = t.tag === 'fed' ? 'Federal' : t.tag === 'state' ? 'State' : 'Federal & State';
-      html += `<div class="ref-item" data-search="${(t.term + ' ' + (t.full||'')).toLowerCase()}">
-        <div class="ref-item-hdr" onclick="toggleRef('ref-${t.term.replace(/\s/g,'-')}')">
-          <div>
-            <div class="ref-term">${t.term}</div>
-            ${t.full ? `<div class="ref-abbr">${t.full}</div>` : ''}
-          </div>
-          <div style="display:flex;align-items:center;gap:8px">
-            <span class="ref-tag ${tagClass}">${tagLabel}</span>
-            <i class="ti ti-chevron-down" id="icon-ref-${t.term.replace(/\s/g,'-')}" style="color:#aaa;font-size:14px;transition:transform .2s"></i>
-          </div>
-        </div>
-        <div class="ref-body" id="ref-${t.term.replace(/\s/g,'-')}">
-          <p>${t.body}</p>
-          ${t.link ? `<a class="ref-link" href="${t.link}" target="_blank"><i class="ti ti-external-link" style="font-size:12px"></i>${t.linkLabel}</a>` : ''}
-        </div>
-      </div>`;
-    });
-    html += '</div>';
-  });
-  container.innerHTML = html;
+function toggleNameOpt(id){
+  const body=document.getElementById(id);
+  const icon=document.getElementById('icon-'+id);
+  const isOpen=body.classList.contains('open');
+  body.classList.toggle('open',!isOpen);
+  if(icon)icon.style.transform=isOpen?'':'rotate(180deg)';
 }
 
-function toggleRef(id) {
-  const body = document.getElementById(id);
-  const icon = document.getElementById('icon-' + id);
-  if (!body) return;
-  const isOpen = body.classList.contains('open');
-  body.classList.toggle('open', !isOpen);
-  if (icon) icon.style.transform = isOpen ? '' : 'rotate(180deg)';
-}
-
-function filterRef() {
-  const q = document.getElementById('refSearch').value.toLowerCase().trim();
-  document.querySelectorAll('.ref-item').forEach(el => {
-    const match = !q || el.dataset.search.includes(q);
-    el.style.display = match ? '' : 'none';
-  });
-  document.querySelectorAll('.ref-category').forEach(cat => {
-    const anyVisible = [...cat.querySelectorAll('.ref-item')].some(el => el.style.display !== 'none');
-    cat.style.display = anyVisible ? '' : 'none';
-  });
-}
-
-
-let tosAccepted = false;
-
-function showTosModal() {
-  const state = document.getElementById('stateSelect').value;
-  const bizType = document.getElementById('bizType').value;
-  document.getElementById('errorContainer').innerHTML = '';
-  if (!state || !bizType) {
-    document.getElementById('errorContainer').innerHTML = '<div class="error-box"><i class="ti ti-alert-circle"></i> Please select both your state and business type first.</div>';
+function showTosModal(){
+  const state=document.getElementById('stateSelect').value;
+  const bizType=document.getElementById('bizType').value;
+  document.getElementById('errorContainer').innerHTML='';
+  if(!state||!bizType){
+    document.getElementById('errorContainer').innerHTML='<div class="error-box"><i class="ti ti-alert-circle"></i> Pick your state and business type first.</div>';
     return;
   }
-  // Reset checkbox each time
-  document.getElementById('tosCheckbox').checked = false;
+  document.getElementById('tosCheckbox').checked=false;
   document.getElementById('modalAcceptBtn').classList.remove('enabled');
   document.getElementById('tosModal').classList.add('open');
 }
-
-function toggleAcceptBtn() {
-  const checked = document.getElementById('tosCheckbox').checked;
-  document.getElementById('modalAcceptBtn').classList.toggle('enabled', checked);
+function toggleAcceptBtn(){
+  document.getElementById('modalAcceptBtn').classList.toggle('enabled',document.getElementById('tosCheckbox').checked);
 }
-
-function acceptTos() {
-  tosAccepted = true;
+function acceptTos(){
+  tosAccepted=true;
   document.getElementById('tosModal').classList.remove('open');
   generateChecklist();
 }
-
-// Close modal if user clicks outside the box
-document.addEventListener('click', function(e) {
-  const modal = document.getElementById('tosModal');
-  if (e.target === modal) {
-    modal.classList.remove('open');
-  }
+document.addEventListener('click',function(e){
+  const modal=document.getElementById('tosModal');
+  if(e.target===modal)modal.classList.remove('open');
 });
 
-/* ── CHECKLIST GENERATION ── */
-async function generateChecklist() {
-  const state = document.getElementById('stateSelect').value;
-  const bizType = document.getElementById('bizType').value;
-  const industry = document.getElementById('industry').value.trim();
-  const city = document.getElementById('cityInput').value.trim();
-  document.getElementById('errorContainer').innerHTML = '';
+async function generateChecklist(){
+  const state=document.getElementById('stateSelect').value;
+  const bizType=document.getElementById('bizType').value;
+  const industry=document.getElementById('industry').value.trim();
+  const city=document.getElementById('cityInput').value.trim();
+  const opLocation=document.getElementById('opLocation').value;
+  document.getElementById('errorContainer').innerHTML='';
+  document.getElementById('formSection').style.display='none';
+  document.getElementById('loadingSection').style.display='block';
+  document.getElementById('results').style.display='none';
 
-  if (!state || !bizType) {
-    document.getElementById('errorContainer').innerHTML = `<div class="error-box"><i class="ti ti-alert-circle"></i> Please select both your state and business type.</div>`;
-    return;
-  }
+  const systemPrompt=`You are a plain-talking small business compliance expert. Write like you're explaining this to a buddy — no lawyer talk, no jargon, short sentences. Return ONLY valid JSON, no markdown, no backticks.
 
-  document.getElementById('formSection').style.display = 'none';
-  document.getElementById('loadingSection').style.display = 'block';
-  document.getElementById('results').style.display = 'none';
+Return this exact structure:
+{"tier1":{"federal":[...],"state":[...],"city":[...]},"tier2":{"federal":[...],"state":[...],"city":[...]},"tier3":{"federal":[...],"state":[...],"city":[...]}}
 
-  const systemPrompt = `You are a small business compliance expert. Return ONLY a valid JSON object — no markdown, no backticks, no extra text before or after the JSON. Every "desc" field must be ONE short sentence under 18 words. Every "name" field must be under 7 words. Return concise, real data.
+Each item: {"id":"unique","name":"short name under 6 words","priority":"critical|high|medium","cost":"$X or Free","timeframe":"when to do it","desc":"One plain sentence what this is and why it matters.","steps":["Go to [url]. Click [x]. Do [y].","Step 2 plain instruction","Step 3 plain instruction"],"link":"official url or null","linkLabel":"link text or null"}
 
-Exact JSON format:
-{"federal":[{"id":"fed1","name":"","priority":"critical","cost":"","timeframe":"","desc":"","link":"","linkLabel":""}],"state":[{"id":"st1","name":"","priority":"critical","cost":"","timeframe":"","desc":"","link":"","linkLabel":""}],"city":[{"id":"cty1","name":"","priority":"critical","cost":"","timeframe":"","desc":"","link":"","linkLabel":""}]}
+TIER 1 — Do This Before You Operate (bare minimum to be legal on day one):
+Federal: EIN, entity formation confirmation if LLC/corp
+State: Articles of Organization if LLC (with DIY steps AND registered agent option), registered agent, state tax ID registration
+City: city business license, local permits if required for their industry/location
 
-Priority values: critical, high, or medium only.
-Federal items (include all applicable, max 6): EIN from IRS, BOI/FinCEN report status note (IMPORTANT: As of March 2025 FinCEN interim final rule, US-formed LLCs and corporations are EXEMPT from BOI filing — include this as a medium priority informational item noting the exemption is in effect but the law could be reinstated so users should monitor fincen.gov), self-employment tax setup, S-corp election if applicable, federal industry license if required.
-State items (include all applicable, max 6): SOS filing confirmation, state tax ID, sales tax permit, state business license, registered agent, annual report deadline, industry state license if required.
-City items (include all applicable, max 5): city/municipal business license, zoning permit or home occupation permit, local signage permit if applicable, city sales tax registration if city has its own sales tax, county business license if required. If no city was provided, return an empty city array. Use the actual city name in descriptions. Link to the city or county official website where possible.
-Use real .gov or official city/county URLs. You specialize in these four states only: Arizona, Florida, Tennessee, and Texas. Be highly accurate and specific — include correct fees, deadlines, and official agency names for each state. CRITICAL STATE-SPECIFIC FACTS (use these exact details):
+TIER 2 — Do This In The Next 90 Days:
+Business bank account (critical — keep money separate), operating agreement if not done, general liability insurance, sales tax / TPT permit IF they sell goods or taxable services, estimated quarterly tax setup, annual report awareness
 
-ARIZONA LLC:
-- Articles of Organization: $50 regular, $85 expedited, filed with AZ Corporation Commission (azcc.gov)
-- NO annual report required for LLCs (corporations do require one)
-- TPT (Transaction Privilege Tax) license required if selling goods/services: $12/location, renew by January 1 each year at AZTaxes.gov
-- State tax ID: register at AZTaxes.gov using Form JT-1
-- No Arizona franchise tax or state income tax on LLC pass-through income
-- Registered agent (statutory agent) required, must have AZ physical address
-- New portal: Arizona Business Connect (azbusinessconnect.gov)
+TIER 3 — Optional But Smart:
+S-corp election if profitable, DBA if they want a trade name, business credit card, trademark search, home office deduction if applicable
 
-FLORIDA LLC:
-- Articles of Organization: $125 filing fee, filed with FL Division of Corporations (sunbiz.org)
-- Annual report: $138.75 fee, due May 1 each year, $400 automatic late penalty, filed at sunbiz.org
-- Administrative dissolution if not filed by third Friday in September
-- First annual report due January 1 - May 1 of the YEAR AFTER formation
-- Sales tax permit: register with FL Department of Revenue (floridarevenue.com)
-- Registered agent required with FL physical address
+IMPORTANT RULES:
+- Steps array: write like "Go to irs.gov/ein. Click Apply Online Now. Fill out the questions — takes 10 minutes. Download your CP-575 letter at the end. Save it forever." Real instructions, real URLs.
+- If opLocation is "home" (clients come to home): add to tier1 a home occupation permit item covering zoning, HOA check, and any state board license for their industry. Be specific — barbers need state board + health dept; auto body CANNOT operate from residential usually.
+- TPT/sales tax: only include if they sell physical goods OR are in a service industry that state taxes. Explain in plain terms when they actually need it.
+- For the registered agent shortcut: in the EIN and Articles steps, add a note like "OR: hire a registered agent like Northwest Registered Agent (~$125/yr) and they handle all the filing for you. You just sign what they email."
 
-TENNESSEE LLC:
-- Articles of Organization: $300 filing fee (for LLCs with 1-6 members), filed with TN Secretary of State (sos.tn.gov)
-- Annual report: $300 fee (1-6 members), due April 1 each year, filed at TNCaB portal (tncab.tn.gov)
-- 60-day grace period after April 1 before administrative dissolution
-- Franchise & Excise Tax (Form FAE170): required for all TN LLCs, due April 15 each year
-  - Franchise tax: 0.25% of net worth, minimum $100/year
-  - Excise tax: 6.5% of net earnings, $50,000 standard deduction
-- No Tennessee state income tax on wages
-- Sales tax: register with TDOR (tntap.tn.gov)
+STATE-SPECIFIC FACTS (use these):
+ARIZONA: Articles $50 at azcc.gov. No annual report for LLCs. TPT license $12 at AZTaxes.gov — required if selling goods or most services. State tax ID at AZTaxes.gov Form JT-1. No AZ franchise tax.
+FLORIDA: Articles $125 at sunbiz.org. Annual report $138.75 due May 1 — $400 late fee, no joke. Sales tax permit at floridarevenue.com.
+TENNESSEE: Articles $300 at sos.tn.gov. Annual report $300 due April 1. Franchise & Excise Tax Form FAE170 due April 15 — minimum $100/yr even if no profit. Sales tax at tntap.tn.gov.
+TEXAS: Certificate of Formation $300 at sos.texas.gov. No annual report but Public Information Report (PIR) due May 15 at comptroller.texas.gov — $50 late fee. Sales tax at comptroller.texas.gov.`;
 
-TEXAS LLC:
-- Certificate of Formation: $300 filing fee, filed with TX Secretary of State (sos.texas.gov)
-- NO Secretary of State annual report for LLCs
-- Public Information Report (PIR, Form 05-102): required annually by May 15, filed with Texas Comptroller (comptroller.texas.gov), even if zero revenue — $50 late penalty
-- Franchise tax: 0.75% of revenue above $2.65M threshold (2026); below threshold still must file PIR
-- Sales tax permit: register with Texas Comptroller (comptroller.texas.gov)
-- Registered agent required with TX physical address
-- No Texas state income tax`;
+  const userMsg=`State: ${state}
+City: ${city||'(not specified)'}
+Business type: ${bizType}
+Industry: ${industry||'general small business'}
+Operation location: ${opLocation||'not specified'}
 
-  const userMsg = `State: ${state}\nCity: ${city || '(not specified)'}\nBusiness type: ${bizType}\nIndustry: ${industry || 'General small business'}\n\nGenerate the complete compliance checklist now.`;
+Build the compliance checklist now in plain talk.`;
 
-  try {
-    const resp = await fetch('/api/checklist', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 6000,
-        system: systemPrompt,
-        messages: [{role: 'user', content: userMsg}]
-      })
+  try{
+    const resp=await fetch('/api/checklist',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:8000,system:systemPrompt,messages:[{role:'user',content:userMsg}]})
+    });
+    if(!resp.ok)throw new Error('API error '+resp.status);
+    const data=await resp.json();
+    let raw=data.content.filter(b=>b.type==='text').map(b=>b.text).join('');
+    raw=raw.replace(/```json|```/g,'').trim();
+    const parsed=JSON.parse(raw);
+
+    tasks=[];
+    ['tier1','tier2','tier3'].forEach(tier=>{
+      const t=parsed[tier]||{};
+      ['federal','state','city'].forEach(cat=>{
+        (t[cat]||[]).forEach(item=>{
+          tasks.push({...item,tier,category:cat,done:false,open:false});
+        });
+      });
     });
 
-    if (!resp.ok) throw new Error('API error: ' + resp.status);
-    const data = await resp.json();
-    let raw = data.content.filter(b => b.type === 'text').map(b => b.text).join('');
-    raw = raw.replace(/```json|```/g, '').trim();
-    if (data.stop_reason === 'max_tokens') throw new Error('Response cut off.');
-    const parsed = JSON.parse(raw);
-
-    tasks = [
-      ...parsed.federal.map(t => ({...t, type: 'federal', done: false, open: false})),
-      ...parsed.state.map(t => ({...t, type: 'state', done: false, open: false})),
-      ...(parsed.city || []).map(t => ({...t, type: 'city', done: false, open: false}))
-    ];
-
-    document.getElementById('loadingSection').style.display = 'none';
-    renderResults(state, bizType, industry, city);
-  } catch(err) {
-    document.getElementById('loadingSection').style.display = 'none';
-    document.getElementById('formSection').style.display = 'block';
-    document.getElementById('errorContainer').innerHTML = `<div class="error-box"><i class="ti ti-alert-circle"></i> Couldn't generate your checklist. Please try again.</div>`;
+    document.getElementById('loadingSection').style.display='none';
+    renderResults(state,bizType,industry,city,opLocation);
+  }catch(err){
+    document.getElementById('loadingSection').style.display='none';
+    document.getElementById('formSection').style.display='block';
+    document.getElementById('errorContainer').innerHTML='<div class="error-box"><i class="ti ti-alert-circle"></i> Couldn\'t generate your checklist. Try again in a sec.</div>';
     console.error(err);
   }
 }
 
-function renderResults(state, bizType, industry, city) {
-  const federal = tasks.filter(t => t.type === 'federal');
-  const stateT = tasks.filter(t => t.type === 'state');
-  const cityT = tasks.filter(t => t.type === 'city');
-  const total = tasks.length;
-  const done = tasks.filter(t => t.done).length;
-  const critical = tasks.filter(t => t.priority === 'critical').length;
+function renderResults(state,bizType,industry,city,opLocation){
+  const total=tasks.length;
+  const done=tasks.filter(t=>t.done).length;
+  const critical=tasks.filter(t=>t.priority==='critical').length;
 
-  document.getElementById('summarySection').innerHTML = `
+  document.getElementById('summarySection').innerHTML=`
     <div style="margin-bottom:.25rem">
-      <div class="biz-headline">${bizType} — ${city ? city + ', ' : ''}${state}</div>
-      ${industry ? `<div class="biz-sub">${industry}</div>` : ''}
+      <div class="biz-headline">${bizType} — ${city?city+', ':''}${state}</div>
+      ${industry?`<div class="biz-sub">${industry}</div>`:''}
     </div>
     <div class="progress-wrap"><div class="progress-fill" id="progressBar" style="width:${total>0?Math.round(done/total*100):0}%"></div></div>
     <div class="progress-label" id="progressLabel">${done} of ${total} steps complete</div>
     <div class="sum-grid">
       <div class="sum-card"><div class="sum-num" id="sumTotal">${total}</div><div class="sum-lbl">Total steps</div></div>
-      <div class="sum-card"><div class="sum-num" style="color:#a32d2d">${critical}</div><div class="sum-lbl">Critical / do first</div></div>
-      <div class="sum-card"><div class="sum-num" style="color:#27500a" id="sumDone">${done}</div><div class="sum-lbl">Completed</div></div>
+      <div class="sum-card"><div class="sum-num" style="color:#a32d2d">${critical}</div><div class="sum-lbl">Do first</div></div>
+      <div class="sum-card"><div class="sum-num" style="color:#27500a" id="sumDone">${done}</div><div class="sum-lbl">Done</div></div>
     </div>`;
 
-  let html = `<div class="sec-hdr"><i class="ti ti-building-bank" style="color:#185fa5"></i><span class="sec-title">Federal requirements</span><span class="sec-badge fed-badge">${federal.length} steps</span></div>`;
-  federal.forEach(t => { html += buildCard(t); });
-  html += `<div class="sec-hdr"><i class="ti ti-map-pin" style="color:#3b6d11"></i><span class="sec-title">${state} state requirements</span><span class="sec-badge state-badge">${stateT.length} steps</span></div>`;
-  stateT.forEach(t => { html += buildCard(t); });
+  let html='';
 
-  if (cityT.length > 0) {
-    html += `<div class="sec-hdr"><i class="ti ti-home-2" style="color:#854f0b"></i><span class="sec-title">${city || 'City'} / local requirements</span><span class="sec-badge city-badge">${cityT.length} steps</span></div>`;
-    cityT.forEach(t => { html += buildCard(t); });
+  // TIER 1
+  const t1fed=tasks.filter(t=>t.tier==='tier1'&&t.category==='federal');
+  const t1st=tasks.filter(t=>t.tier==='tier1'&&t.category==='state');
+  const t1city=tasks.filter(t=>t.tier==='tier1'&&t.category==='city');
+  if(t1fed.length||t1st.length||t1city.length){
+    html+=`<div class="tier-hdr t1"><div class="tier-title t1"><i class="ti ti-flag-filled"></i> Tier 1 — Do This Before You Operate</div><div class="tier-desc t1">The bare minimum to be legally compliant on day one. Don't take money until these are done.</div></div>`;
+    if(t1fed.length){html+=`<div class="sec-hdr"><i class="ti ti-building-bank" style="color:#185fa5"></i><span class="sec-title">Federal</span><span class="sec-badge fed-badge">${t1fed.length} steps</span></div>`;t1fed.forEach(t=>{html+=buildCard(t);});}
+    if(t1st.length){html+=`<div class="sec-hdr"><i class="ti ti-map-pin" style="color:#3b6d11"></i><span class="sec-title">${state} — State</span><span class="sec-badge state-badge">${t1st.length} steps</span></div>`;t1st.forEach(t=>{html+=buildCard(t);});}
+    if(t1city.length){html+=`<div class="sec-hdr"><i class="ti ti-home-2" style="color:#854f0b"></i><span class="sec-title">${city||'City'} — Local</span><span class="sec-badge city-badge">${t1city.length} steps</span></div>`;t1city.forEach(t=>{html+=buildCard(t);});}
+
+    // Registered agent shortcut box
+    html+=`<div class="shortcut-box">
+      <div class="shortcut-title"><i class="ti ti-bolt"></i> The shortcut — hire a registered agent</div>
+      <div class="shortcut-body">Everything in Tier 1? <strong>A registered agent handles most of it for you.</strong> Services like Northwest Registered Agent (~$125/year) will file your Articles of Organization, be your official state address, and forward anything the government sends you. You just sign what they email.<br><br>Either way works. <strong>DIY saves money. Registered agent saves time and headaches.</strong> Your call.</div>
+    </div>`;
+
+    // Home-based business callout
+    if(opLocation==='home'){
+      html+=`<div class="callout red"><div class="callout-title"><i class="ti ti-home-exclamation"></i> Home-based business — extra rules apply</div>
+      <p>Since clients are coming to your home, you've got extra steps most people miss. Don't skip these — operating without the right permits can shut you down.</p>
+      <ul>
+        <li><strong>Zoning:</strong> Most residential zones allow home offices but NOT client-facing businesses without a home occupation permit. Check your city's zoning code first.</li>
+        <li><strong>HOA:</strong> If you're in an HOA, check your CC&Rs. Many prohibit client traffic, signage, and commercial vehicles in the driveway.</li>
+        <li><strong>Barbers / cosmetologists:</strong> State board license + health dept approval + home occupation permit required. Some states require a separate salon license even for one chair at home.</li>
+        <li><strong>Nail tech / esthetician:</strong> State board license + health dept inspection for ventilation and sanitation. Requirements are strict — check your state board website.</li>
+        <li><strong>Auto body / mechanic:</strong> Almost always NOT allowed in residential zones. You typically need commercially-zoned property. Check your city code before you touch a car at home.</li>
+        <li><strong>General rule:</strong> No excessive client traffic, no exterior signs in most areas, limited square footage of home used for business (usually 10-20%).</li>
+      </ul></div>`;
+    }
   }
 
-  document.getElementById('checklistContent').innerHTML = html;
-  document.getElementById('results').style.display = 'block';
+  // TIER 2
+  const t2all=tasks.filter(t=>t.tier==='tier2');
+  if(t2all.length){
+    html+=`<div class="tier-hdr t2"><div class="tier-title t2"><i class="ti ti-clock"></i> Tier 2 — Do This In The Next 90 Days</div><div class="tier-desc t2">Not blockers on day one, but don't sleep on these. Get them done while things are still simple.</div></div>`;
+    const t2fed=t2all.filter(t=>t.category==='federal');
+    const t2st=t2all.filter(t=>t.category==='state');
+    const t2city=t2all.filter(t=>t.category==='city');
+    if(t2fed.length){html+=`<div class="sec-hdr"><i class="ti ti-building-bank" style="color:#185fa5"></i><span class="sec-title">Federal</span><span class="sec-badge fed-badge">${t2fed.length} steps</span></div>`;t2fed.forEach(t=>{html+=buildCard(t);});}
+    if(t2st.length){html+=`<div class="sec-hdr"><i class="ti ti-map-pin" style="color:#3b6d11"></i><span class="sec-title">${state} — State</span><span class="sec-badge state-badge">${t2st.length} steps</span></div>`;t2st.forEach(t=>{html+=buildCard(t);});}
+    if(t2city.length){html+=`<div class="sec-hdr"><i class="ti ti-home-2" style="color:#854f0b"></i><span class="sec-title">Local</span><span class="sec-badge city-badge">${t2city.length} steps</span></div>`;t2city.forEach(t=>{html+=buildCard(t);});}
+
+    // TPT callout
+    html+=`<div class="callout amber"><div class="callout-title"><i class="ti ti-receipt-tax"></i> Do I actually need a sales tax / TPT license?</div>
+    <p><strong>Yes, get it if:</strong> you're selling physical products, running a food truck, doing retail or ecommerce, or providing services in a state that taxes your industry (Arizona taxes most services).</p>
+    <p><strong>Probably not if:</strong> you're purely consulting, coaching, or providing software/digital services — but verify for your specific state and service type.</p>
+    <p><strong>When to get it:</strong> Before your first taxable sale. Collecting sales tax without a permit is illegal. Not collecting when you're supposed to is also illegal. Get the permit first.</p></div>`;
+  }
+
+  // TIER 3
+  const t3all=tasks.filter(t=>t.tier==='tier3');
+  if(t3all.length){
+    html+=`<div class="tier-hdr t3"><div class="tier-title t3"><i class="ti ti-shield-check"></i> Tier 3 — Optional But You'll Be Glad You Did</div><div class="tier-desc t3">Not required, but these save you money, protect you, or set you up right for later.</div></div>`;
+    const t3fed=t3all.filter(t=>t.category==='federal');
+    const t3st=t3all.filter(t=>t.category==='state');
+    const t3city=t3all.filter(t=>t.category==='city');
+    if(t3fed.length){html+=`<div class="sec-hdr"><i class="ti ti-building-bank" style="color:#185fa5"></i><span class="sec-title">Federal</span><span class="sec-badge fed-badge">${t3fed.length} steps</span></div>`;t3fed.forEach(t=>{html+=buildCard(t);});}
+    if(t3st.length){html+=`<div class="sec-hdr"><i class="ti ti-map-pin" style="color:#3b6d11"></i><span class="sec-title">State</span><span class="sec-badge state-badge">${t3st.length} steps</span></div>`;t3st.forEach(t=>{html+=buildCard(t);});}
+    if(t3city.length){html+=`<div class="sec-hdr"><i class="ti ti-home-2" style="color:#854f0b"></i><span class="sec-title">Local</span><span class="sec-badge city-badge">${t3city.length} steps</span></div>`;t3city.forEach(t=>{html+=buildCard(t);});}
+  }
+
+  document.getElementById('checklistContent').innerHTML=html;
+  document.getElementById('results').style.display='block';
 }
 
-function buildCard(t) {
-  const pc = t.priority === 'critical' ? 'pill-crit' : t.priority === 'high' ? 'pill-high' : 'pill-med';
-  const pl = t.priority === 'critical' ? 'Critical — do first' : t.priority === 'high' ? 'High priority' : 'Medium priority';
-  return `<div class="task-card" id="card-${t.id}">
+function buildCard(t){
+  const pc=t.priority==='critical'?'pill-crit':t.priority==='high'?'pill-high':'pill-med';
+  const pl=t.priority==='critical'?'Do this first':t.priority==='high'?'High priority':'Good to do';
+  const stepsHtml=t.steps&&t.steps.length?`<ol class="task-steps">${t.steps.map((s,i)=>`<li><span class="step-num">${i+1}.</span><span>${s}</span></li>`).join('')}</ol>`:'';
+  return`<div class="task-card" id="card-${t.id}">
     <div class="task-header" onclick="toggleTask('${t.id}')">
       <div class="check-circle" id="circle-${t.id}"></div>
       <div class="task-main">
@@ -789,52 +648,117 @@ function buildCard(t) {
     </div>
     <div class="task-detail" id="detail-${t.id}">
       <p class="task-desc">${t.desc}</p>
+      ${stepsHtml}
       <div class="detail-grid">
-        <div class="detail-item"><strong>When to do it</strong>${t.timeframe}</div>
-        <div class="detail-item"><strong>Estimated cost</strong>${t.cost}</div>
+        <div class="detail-item"><strong>When</strong>${t.timeframe}</div>
+        <div class="detail-item"><strong>Cost</strong>${t.cost}</div>
       </div>
-      ${t.link ? `<a class="task-link" href="${t.link}" target="_blank"><i class="ti ti-external-link"></i>${t.linkLabel || 'Official resource'}</a>` : ''}
-      <div class="glossary-hint" onclick="showTab('ref')"><i class="ti ti-book-2" style="font-size:12px"></i>See Term Reference for definitions of terms on this checklist</div>
+      ${t.link?`<a class="task-link" href="${t.link}" target="_blank"><i class="ti ti-external-link"></i>${t.linkLabel||'Official site'}</a>`:''}
+      <div style="font-size:11px;color:#aaa;margin-top:8px;cursor:pointer;display:flex;align-items:center;gap:4px" onclick="showTab('ref')"><i class="ti ti-book-2" style="font-size:12px"></i>Check the Term Reference tab for plain-English definitions</div>
     </div>
   </div>`;
 }
 
-function toggleDetail(id) {
-  const detail = document.getElementById('detail-' + id);
-  const icon = document.getElementById('expand-icon-' + id);
-  const isOpen = detail.classList.contains('open');
-  detail.classList.toggle('open', !isOpen);
-  if (icon) icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+function toggleDetail(id){
+  const detail=document.getElementById('detail-'+id);
+  const icon=document.getElementById('expand-icon-'+id);
+  const isOpen=detail.classList.contains('open');
+  detail.classList.toggle('open',!isOpen);
+  if(icon)icon.style.transform=isOpen?'':'rotate(180deg)';
 }
 
-function toggleTask(id) {
-  const t = tasks.find(x => x.id === id);
-  if (!t) return;
-  t.done = !t.done;
-  const card = document.getElementById('card-' + id);
-  const circle = document.getElementById('circle-' + id);
-  const name = document.getElementById('name-' + id);
-  card.classList.toggle('done', t.done);
-  circle.innerHTML = t.done ? '<i class="ti ti-check"></i>' : '';
-  name.style.textDecoration = t.done ? 'line-through' : '';
-  const total = tasks.length;
-  const done = tasks.filter(x => x.done).length;
-  document.getElementById('sumDone').textContent = done;
-  document.getElementById('progressBar').style.width = Math.round(done/total*100) + '%';
-  document.getElementById('progressLabel').textContent = `${done} of ${total} steps complete`;
+function toggleTask(id){
+  const t=tasks.find(x=>x.id===id);if(!t)return;
+  t.done=!t.done;
+  document.getElementById('card-'+id).classList.toggle('done',t.done);
+  document.getElementById('circle-'+id).innerHTML=t.done?'<i class="ti ti-check"></i>':'';
+  const total=tasks.length;const done=tasks.filter(x=>x.done).length;
+  document.getElementById('sumDone').textContent=done;
+  document.getElementById('progressBar').style.width=Math.round(done/total*100)+'%';
+  document.getElementById('progressLabel').textContent=`${done} of ${total} steps complete`;
 }
 
-function resetForm() {
-  tasks = [];
-  document.getElementById('results').style.display = 'none';
-  document.getElementById('checklistContent').innerHTML = '';
-  document.getElementById('summarySection').innerHTML = '';
-  document.getElementById('stateSelect').value = '';
-  document.getElementById('bizType').value = '';
-  document.getElementById('industry').value = '';
-  document.getElementById('cityInput').value = '';
-  document.getElementById('formSection').style.display = 'block';
-  window.scrollTo(0, 0);
+function resetForm(){
+  tasks=[];
+  document.getElementById('results').style.display='none';
+  document.getElementById('checklistContent').innerHTML='';
+  document.getElementById('summarySection').innerHTML='';
+  ['stateSelect','bizType','opLocation'].forEach(id=>document.getElementById(id).value='');
+  ['industry','cityInput'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('formSection').style.display='block';
+  window.scrollTo(0,0);
+}
+
+// ── GLOSSARY ──
+const GLOSSARY=[
+  {cat:'Federal IDs & Tax',terms:[
+    {term:'EIN',full:'Employer Identification Number',tag:'fed',body:'Your business\'s federal tax ID — like a Social Security number but for your company. You need it to open a business bank account, file business taxes, and hire anyone. Free at irs.gov, takes 10 minutes online, and you get it instantly.',link:'https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online',linkLabel:'Get your EIN free at IRS.gov'},
+    {term:'Self-Employment Tax',full:'SE Tax',tag:'fed',body:'When you own an LLC or run a solo business, you pay both the employee AND employer share of Social Security and Medicare — 15.3% total on your net profit. You report it on Schedule SE with your personal tax return. You can deduct half of it, which helps a little.',link:'https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes',linkLabel:'IRS SE Tax guide'},
+    {term:'Estimated Quarterly Taxes',full:'Form 1040-ES',tag:'fed',body:'No employer is withholding taxes for you anymore, so you pay the IRS four times a year. 2026 due dates: April 15, June 16, September 15, January 15, 2027. Miss these and you get a penalty even if you pay it all at tax time. Rule of thumb: set aside 25-30% of every payment you receive.',link:'https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes',linkLabel:'IRS Estimated Tax info'},
+    {term:'Form 2553',full:'S-Corp Election',tag:'fed',body:'If your LLC is making good money and you want to save on self-employment tax, you can elect to be taxed as an S-Corp. You pay yourself a salary, take the rest as a distribution — and only the salary gets hit with SE tax. File within 75 days of forming or by March 15 of the current year.',link:'https://www.irs.gov/forms-pubs/about-form-2553',linkLabel:'IRS Form 2553 info'},
+  ]},
+  {cat:'Federal Compliance',terms:[
+    {term:'BOI Report',full:'Beneficial Ownership Information Report',tag:'fed',body:'As of March 2025, US-formed LLCs are EXEMPT from BOI filing under a FinCEN interim final rule. Only foreign-formed companies doing business in the US still have to file. The law could be reinstated — keep an eye on fincen.gov.',link:'https://boiefiling.fincen.gov',linkLabel:'FinCEN BOI info'},
+    {term:'Federal Business License',full:null,tag:'fed',body:'Most small businesses don\'t need a federal license. But some industries do — firearms dealers, alcohol/tobacco, agriculture, aviation, broadcasting. If your industry is regulated federally, check with the relevant agency.',link:'https://www.sba.gov/business-guide/launch-your-business/apply-licenses-permits',linkLabel:'SBA license guide'},
+  ]},
+  {cat:'Business Structures',terms:[
+    {term:'LLC',full:'Limited Liability Company',tag:'both',body:'The most popular setup for small businesses. Your personal stuff — house, car, savings — is protected if the business gets sued, as long as you keep personal and business money separate. Taxed as pass-through by default, meaning profits flow to your personal tax return.',link:null,linkLabel:null},
+    {term:'Sole Proprietorship',full:null,tag:'both',body:'The simplest way to operate — no formal filing needed. But there\'s zero liability protection. If the business gets sued, your personal assets are on the line. Fine for very small one-person operations testing an idea, but get an LLC before you start making real money.',link:null,linkLabel:null},
+    {term:'S-Corporation',full:'S-Corp',tag:'both',body:'A tax election that lets you pay yourself a salary and take the rest as a distribution, only paying SE tax on the salary portion. Can save a few thousand a year once you\'re clearing $40-50k+ in profit. Requires more bookkeeping discipline.',link:'https://www.irs.gov/businesses/small-businesses-self-employed/s-corporations',linkLabel:'IRS S-Corp guide'},
+  ]},
+  {cat:'State & Local',terms:[
+    {term:'Articles of Organization',full:'LLC Formation Document',tag:'state',body:'The document you file with your state to officially create your LLC. Includes your business name, address, and registered agent. Once it\'s approved and stamped, your LLC legally exists. Or, have a registered agent file it for you.',link:null,linkLabel:null},
+    {term:'Registered Agent',full:'Statutory Agent',tag:'state',body:'A person or company that receives legal documents on behalf of your business — lawsuits, government notices, official mail. Required in every state. You can be your own or hire a service ($50-300/yr). The big perk of hiring one: their address is your public business address, not your home.',link:null,linkLabel:null},
+    {term:'Operating Agreement',full:null,tag:'state',body:'An internal document that says how your LLC is run — who owns what, how profits are split, what happens if someone leaves. Not always required by the state but you absolutely need one. Without it, state default rules apply, which might not be what you want.',link:null,linkLabel:null},
+    {term:'Annual Report',full:'Statement of Information',tag:'state',body:'Many states require you to file a yearly update confirming your business info and pay a fee. Missing it leads to late fees or your LLC getting administratively dissolved. Deadlines and costs vary a lot by state — put it in your calendar.',link:null,linkLabel:null},
+    {term:'DBA',full:'Doing Business As',tag:'state',body:'A trade name — lets you operate under a different name than your LLC\'s legal name. Your LLC doesn\'t change. Same EIN. Same bank. You just file a form so you can legally market as a different name and accept payments under it. Usually $10-50.',link:null,linkLabel:null},
+    {term:'TPT',full:'Transaction Privilege Tax (Arizona)',tag:'state',body:'Arizona\'s version of a sales tax — but it\'s technically a tax on the privilege of doing business, not on the buyer. If you\'re selling goods or providing most services in Arizona, you need a TPT license before your first sale. $12 per location at AZTaxes.gov.',link:'https://aztaxes.gov',linkLabel:'AZTaxes.gov'},
+    {term:'Home Occupation Permit',full:null,tag:'state',body:'Required in most cities if you\'re running a business from home where clients come to you. Zoning laws dictate what you can and can\'t do — usually no excessive traffic, no employees showing up, no exterior signage. Check your city\'s zoning code. If you\'re in an HOA, also check your CC&Rs.',link:null,linkLabel:null},
+  ]},
+  {cat:'Banking',terms:[
+    {term:'Business Bank Account',full:null,tag:'both',body:'Keep business money completely separate from personal money. This is how your LLC protection stays intact. Mix them and a court can hold you personally liable for business debts — called piercing the corporate veil. Open one before you take your first payment.',link:null,linkLabel:null},
+    {term:'Piercing the Corporate Veil',full:null,tag:'both',body:'When a court ignores your LLC and holds you personally liable anyway. Happens when you mix personal and business money, don\'t keep records, or don\'t operate the LLC like a real separate business. Reason #1 to have a separate bank account and keep your books clean.',link:null,linkLabel:null},
+  ]},
+];
+
+function renderRef(){
+  const container=document.getElementById('refContent');
+  let html='';
+  GLOSSARY.forEach(cat=>{
+    html+=`<div class="ref-category" data-cat="${cat.cat}"><div class="ref-cat-label">${cat.cat}</div>`;
+    cat.terms.forEach(t=>{
+      const tagClass=t.tag==='fed'?'ref-tag-fed':t.tag==='state'?'ref-tag-state':'ref-tag-both';
+      const tagLabel=t.tag==='fed'?'Federal':t.tag==='state'?'State':'Federal & State';
+      const tid='ref-'+t.term.replace(/[\s\/&]/g,'-');
+      html+=`<div class="ref-item" data-search="${(t.term+' '+(t.full||'')).toLowerCase()}">
+        <div class="ref-item-hdr" onclick="toggleRef('${tid}')">
+          <div><div class="ref-term">${t.term}</div>${t.full?`<div class="ref-abbr">${t.full}</div>`:''}</div>
+          <div style="display:flex;align-items:center;gap:8px"><span class="ref-tag ${tagClass}">${tagLabel}</span><i class="ti ti-chevron-down" id="icon-${tid}" style="color:#aaa;font-size:14px;transition:transform .2s"></i></div>
+        </div>
+        <div class="ref-body" id="${tid}"><p>${t.body}</p>${t.link?`<a class="ref-link" href="${t.link}" target="_blank"><i class="ti ti-external-link" style="font-size:12px"></i>${t.linkLabel}</a>`:''}</div>
+      </div>`;
+    });
+    html+='</div>';
+  });
+  container.innerHTML=html;
+}
+
+function toggleRef(id){
+  const body=document.getElementById(id);const icon=document.getElementById('icon-'+id);
+  if(!body)return;
+  const isOpen=body.classList.contains('open');
+  body.classList.toggle('open',!isOpen);
+  if(icon)icon.style.transform=isOpen?'':'rotate(180deg)';
+}
+
+function filterRef(){
+  const q=document.getElementById('refSearch').value.toLowerCase().trim();
+  document.querySelectorAll('.ref-item').forEach(el=>{
+    el.style.display=!q||el.dataset.search.includes(q)?'':'none';
+  });
+  document.querySelectorAll('.ref-category').forEach(cat=>{
+    cat.style.display=[...cat.querySelectorAll('.ref-item')].some(el=>el.style.display!=='none')?'':'none';
+  });
 }
 </script>
 </body>
